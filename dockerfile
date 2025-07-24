@@ -1,7 +1,7 @@
-# 1. Imagem base PHP 8.1 com Apache
+# 1. Imagem base
 FROM php:8.1-apache
 
-# 2. Instalar dependências necessárias
+# 2. Dependências
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     libzip-dev \
@@ -11,29 +11,34 @@ RUN apt-get update && apt-get install -y \
 # 3. Instalar Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# 4. Copiar todo código para o container
+# 4. Copiar código
 COPY . /var/www/html/
 
-# 5. Definir diretório de trabalho
+# 5. Definir diretório
 WORKDIR /var/www/html
 
-# 6. Instalar dependências PHP via Composer
+# 6. Instalar dependências PHP
 RUN composer install --no-dev --optimize-autoloader
 
-# 7. Cachear config, rotas e views
+# 7. Limpar cache antigo
+RUN php artisan config:clear && php artisan route:clear && php artisan view:clear
+
+# 8. Copiar .env e gerar chave
+COPY .env .env
+RUN php artisan key:generate
+
+# 9. Cachear config novamente
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-# 8. Ajustar permissões para storage e bootstrap/cache
+# 10. Permissões
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Definir DocumentRoot para a pasta public do Laravel
+# 11. Apache
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
-
-# Habilitar mod_rewrite do Apache
 RUN a2enmod rewrite
 
-# 9. Expor a porta 80 para Apache
 EXPOSE 80
-
-# 10. Rodar Apache no foreground
 CMD ["apache2-foreground"]
+
+RUN cat storage/logs/laravel.log || true
