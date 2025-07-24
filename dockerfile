@@ -26,6 +26,12 @@ RUN php artisan config:cache && php artisan route:cache && php artisan view:cach
 # 8. Ajustar permissões para storage e bootstrap/cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Definir DocumentRoot para a pasta public do Laravel
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+
+# Habilitar mod_rewrite do Apache
+RUN a2enmod rewrite
+
 # 9. Expor a porta 80 para Apache
 EXPOSE 80
 
