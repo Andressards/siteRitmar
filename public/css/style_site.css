@@ -1,0 +1,706 @@
+/* Estilização geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 70px; /* Espaço para o conteúdo não ficar oculto atrás do menu */
+}
+
+body {
+    padding-top: 30px; /* Garante espaço abaixo do menu fixo */
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Garante que fique sobre os elementos */
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
+}
+
+.btn-primary {
+    --bs-btn-color: #ffed03 !important;
+    --bs-btn-bg: #020042 !important;
+    --bs-btn-border-color: #020042 !important;
+    --bs-btn-hover-color: #ffed03 !important;
+    --bs-btn-hover-bg: #020042 !important;
+    --bs-btn-hover-border-color: #020042 !important;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #ffed03 !important;
+    --bs-btn-active-bg: #020042 !important;
+    --bs-btn-active-border-color: #020042 !important;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Fonte mais impactante para títulos */
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Letras maiúsculas para títulos */
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.8; /* Aumenta o espaçamento entre linhas */
+}
+
+.curso-imagem, .card-sobre img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.curso-imagem:hover, .card-sobre img:hover {
+    transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+}
+
+
+/* Estilo do header */
+header {
+    position: fixed;
+    top: 0; /* Fixa o menu no topo da página */
+    left: 0;
+    width: 100%; /* Faz o menu ocupar toda a largura */
+    background-color: #020042; /* Cor de fundo do menu */
+    z-index: 1000; /* Garante que o menu fique acima do conteúdo */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombras para o menu */
+}
+
+
+.filtro-container img {
+    width: 100%; /* Faz a imagem ocupar toda a largura da tela */
+    height: 400px; /* Ajuste conforme necessário */
+    object-fit: cover; /* Mantém a proporção da imagem sem distorção */
+    display: block;
+}
+
+.filtro-container {
+    position: relative; /* Define um contexto para o posicionamento absoluto */
+    width: 100%;
+    overflow: hidden;
+}
+
+#inicio-section {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+#historia {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.inicio-container {
+    width: 100%;
+    max-height: 90vh; /* Ajuste conforme necessário */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Container do header */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo img {
+    height: 40px;
+}
+
+/* Ajuste do menu */
+.menu {
+    flex-grow: 1; /* Faz o menu ocupar o espaço disponível */
+    display: flex;
+    justify-content: center; /* Centraliza o menu */
+}
+
+/* Lista do menu */
+.menu-underline {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Adiciona um espaçamento fixo entre os itens */
+    padding: 0;
+}
+
+
+/* Itens do menu */
+.menu-underline li {
+    margin: 0 20px;
+    position: relative;
+}
+
+/* Links do menu */
+.menu-underline a {
+    text-decoration: none;
+    color: #ffed03;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Efeito underline */
+.menu-underline a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #8ab4ee;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+}
+
+/* Animação do underline no hover */
+.menu-underline a:hover::after {
+    width: 100%;
+}
+
+/* Mudança de cor ao passar o mouse */
+.menu-underline a:hover {
+    color: #8ab4ee;
+}
+
+.menu-underline a.active::after {
+    width: 100%;
+}
+
+.menu-underline a.active {
+    color: #8ab4ee;
+}
+
+
+
+/* CURSOS - CATÁLOGO */
+
+#catalogo-section {
+    padding-top: 60px; /* Adiciona espaço para evitar que a section fique atrás do menu */
+    background-color: #f9f9f9; /* Fundo claro para destacar os cursos */
+    padding: 50px 0;
+}
+
+/* Adicionando uma fonte personalizada */
+.catalogo-header h3 {
+    font-size: 2.5rem;
+    color: var(--cor-azul);
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif; /* Aqui você define a nova fonte */
+}
+
+
+.catalogo-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.catalogo-header h3 {
+    font-size: 2.5rem;
+    color: var(--cor-azul);
+    margin-bottom: 20px;
+}
+
+.filtro-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.filtro-container form {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0 !important;
+    width: 100%;
+    max-width: 400px;
+}
+
+.filtro-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.filtro-container button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #ffed03;
+    color: #020042;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filtro-container button:hover {
+    background-color: #f1dd00;
+    color: #020042;
+}
+
+
+.cursos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.curso-card {
+    background-color: #8ab4ee;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 10px 13px rgb(48 52 64 / 96%);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.curso-card:hover {
+    transform: scale(1.05) rotate(3deg); /* Efeito de zoom e rotação */
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+
+.curso-imagem {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura do card */
+    height: 180px; /* Define uma altura fixa para todas as imagens */
+    object-fit: cover; /* Mantém a proporção da imagem e corta excessos */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+.curso-card h4 {
+    color: var(--cor-azul);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.curso-card p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+
+.section-sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 20px;
+    background-color: #8ab4ee; /* Cor de fundo clara */
+}
+
+.container-sobre {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-sobre {
+    background-color: #020042; /* Azul para o fundo dos cards */
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-sobre h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffed03; /* Amarelo para o título */
+}
+
+.card-sobre p,
+.card-sobre ul {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card-sobre ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.card-sobre ul li {
+    margin-bottom: 10px;
+}
+
+.card-sobre:hover {
+    transform: translateY(-10px); /* Efeito de elevação ao passar o mouse */
+}
+
+.card-sobre a {
+    text-decoration: none;
+    color: #ffed03; /* Amarelo para links, se necessário */
+}
+
+.card-sobre a:hover {
+    color: #fff; /* Alteração da cor ao passar o mouse */
+}
+
+.card-sobre {
+    opacity: 0; /* Começa invisível */
+    transform: translateY(50px); /* Move para baixo inicialmente */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card-sobre.aparecer {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Move para posição normal */
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #020042; /* Azul escuro */
+    color: #fff; /* Texto branco */
+    padding: 40px 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rodape-info, .rodape-redes {
+    width: 100%;
+    max-width: 500px;
+}
+
+.rodape-info h3, .rodape-redes h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffed03; /* Amarelo para os títulos */
+}
+
+.rodape-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.redes-sociais a {
+    font-size: 30px;
+    color: #fff;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: #ffed03; /* Amarelo ao passar o mouse */
+}
+
+.rodape-direitos {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.rodape-direitos p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape-info, .rodape-redes {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .catalogo-header .titulo {
+        font-size: 1.2rem; /* Diminui o tamanho do título em telas menores */
+        text-align: center; /* Opcional: Centraliza o texto */
+    }
+
+    .cursos-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .curso-card {
+        width: 85%; /* Reduz a largura do card para 85% */
+        width: 85%; /* Reduz a largura do card para 85% */
+        margin-bottom: 20px; /* Espaçamento entre os cards */
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #020042;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ajustando para exibir os itens do menu em coluna */
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .menu li {
+        padding: 1px 0; /* Reduz o espaçamento entre os itens */
+        width: 100%;
+    }
+
+    .menu a {
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: 2px 0; /* Diminui o espaço dentro do link */
+    }
+
+    /* Ícone do menu hambúrguer */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 28px;
+        color: #fff;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .inicio-container {
+        margin-top: 12px; /* Ajusta para não ficar tampado pelo menu */
+    }
+    
+    .image-banner {
+        display: block;
+        width: 100%;
+        height: auto;
+    }    
+}
+
+
+/* Seção de Contato */
+.section-contato {
+    background-color: #f0f8ff; /* Fundo suave */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-contato h2 {
+    font-size: 2.5rem;
+    color: var(--cor-azul); /* Cor do título */
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif; /* Fonte personalizada */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espaço entre os campos */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--cor-azul); /* Muda a borda ao focar */
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionar a altura do textarea */
+    height: 150px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--cor-azul);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffcd0a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras ao passar o mouse */
+}
+
+
+
+.carrossel {
+    width: 100%; /* Ajuste conforme necessário */
+    max-width: 450px; /* Defina um tamanho fixo para o carrossel */
+    overflow: hidden; /* Esconde as imagens que ficam fora da área visível */
+    position: relative;
+}
+
+.carrossel-imagens {
+    display: flex;
+    animation: slide 12s infinite; /* A animação vai durar 12 segundos e será infinita */
+}
+
+.carrossel-imagens img {
+    width: 100%; /* Cada imagem ocupa 100% do espaço visível */
+    height: auto;
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    transition: transform 1s ease-in-out; /* Suaviza a transição da imagem */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Primeira imagem visível */
+    }
+    25% {
+        transform: translateX(-100%); /* Segunda imagem visível */
+    }
+    50% {
+        transform: translateX(-200%); /* Terceira imagem visível */
+    }
+    75% {
+        transform: translateX(-300%); /* Quarta imagem visível */
+    }
+    100% {
+        transform: translateX(0); /* Retorna para a primeira imagem */
+    }
+}
+
+.historia-carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #8ab4ee;
+    padding: 40px;
+    gap: 20px; /* Adiciona espaçamento entre os cards */
+}
+
+.historia-texto {
+    background-color: transparent; /* Remove a caixa colorida */
+    color: #000; /* Texto branco para contraste */
+    text-align: center;
+    padding: 40px;
+}
+
+.historia-texto h1 {
+    font-size: 66px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #020042; /* Amarelo para dar destaque */
+}
+
+.historia-texto p {
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .section-contato h2 {
+        font-size: 2rem;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    input, textarea {
+        font-size: 0.9rem;
+    }
+}
+@media (min-width: 768px) { /* Ajuste o valor conforme necessário */
+    .menu-toggle {
+        display: none;
+    }
+}

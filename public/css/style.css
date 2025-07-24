@@ -1,0 +1,247 @@
+* {
+    font-family: 'Roboto';
+    background-color: #0000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px;
+    background-color: #F8F9FA; /* Fundo mais neutro */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #F8F9FA;
+    border-bottom: 1px solid #1E3A8A; /* Cor da borda do header */
+    z-index: 1000;
+    padding: 10px;
+}
+
+.row {
+    margin: 10px;
+}
+
+.container-fluid {
+    padding: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #1E3A8A; /* Cor azul do botão */
+    border: 2px solid #1E3A8A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    float: right;
+    margin-right: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #1D4ED8; /* Hover em azul mais claro */
+    border: 2px solid #1D4ED8;
+}
+
+.msg {
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+#navbar img {
+    width: 80px;
+    padding: 0px;
+}
+
+#navbar {
+    justify-content: space-between;
+    background-color: #F8F9FA;
+    padding: 0px 0;
+}
+
+#navbar a {
+    font-size: 14px;
+    color: #1E3A8A; /* Cor do link no navbar */
+}
+
+#navbar a:hover {
+    color: #1D4ED8; /* Cor do link no hover */
+}
+
+.create-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 60px 20px 20px 20px;
+    border: 2px solid #1E3A8A;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow-y: auto;
+    background: #FFFFFF; /* Fundo branco para o formulário */
+}
+
+.header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1E3A8A; /* Faixa azul no topo */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.titulo-form {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+}
+
+.create-container label {
+    font-weight: bold;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+    font-size: 12px;
+}
+
+.grid-tipo-entrada-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.grid-tipo-entrada-lista-container th {
+    width: 25%;
+}
+
+.grid-tipo-entrada-lista-container form {
+    display: inline-block;
+}
+
+.grid-tipo-saida-title-container, .grid-prestador-servico-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.grid-tipo-saida-lista-container th {
+    width: 25%;
+}
+
+.grid-prestador-servico-lista-container th {
+    width: 25%;
+}
+
+.grid-prestador-servico-lista-container form {
+    display: inline-block;
+}
+
+.table thead th {
+    background-color: #1E3A8A; /* Cor do cabeçalho da tabela */
+    color: white;
+}
+
+.table {
+    border: 2px solid #1E3A8A;
+    border-top: 8px solid #1E3A8A;
+    margin-bottom: 20px;
+    border-radius: 10px !important;
+}
+
+.grid-tipo-entrada-filter-container {
+    margin-bottom: 20px;
+}
+
+.grid-tipo-entrada-filter-container .form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.grid-tipo-entrada-filter-container .form-control {
+    width: 100%;
+}
+
+.grid-tipo-entrada-lista-container .table {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #1E3A8A; /* Cor de fundo do footer */
+    color: #fff;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+.filtro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.form-busca {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    width: 100%;
+}
+
+.form-busca input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: transparent;
+    color: #333;
+    width: 140px;
+}
+
+.form-busca input::placeholder {
+    color: #888;
+}
+
+.form-busca button {
+    background-color: #1D4ED8; /* Cor do botão de busca */
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.form-busca button:hover {
+    background-color: #1E40AF; /* Hover no botão de busca */
+}
